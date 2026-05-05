@@ -1,3 +1,10 @@
+/* ========================================================
+   CORE SITE STYLES
+   This file contains all global layout, typography, and 
+   component styles used across the entire website.
+   ======================================================== */
+
+/* ================= NAVBAR (Global Header) ================= */
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Sora:wght@400;500;600;700&display=swap");
 
@@ -12,7 +19,7 @@
             font-style: normal;
             background: #07080d;
             color: rgba(255, 255, 255, 0.86);
-            min-height: 100vh;
+            height: 100vh;
             overflow-x: hidden; /* Prevent horizontal scrollbar from marquee */
             position: relative;
             z-index: 0;
@@ -68,7 +75,7 @@
             --primary-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
 
-        /* ================= NAVBAR ================= */
+        
         .navbar {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -250,7 +257,7 @@
                 padding: 14px 18px 24px 18px; gap: 6px;
                 opacity: 0; visibility: hidden; transform: translateY(-10px);
                 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                max-height: 85vh; overflow-y: auto;
+                max-height: 85vh; overflow-y: auto; overflow-x: hidden;
                 box-shadow: var(--shadow);
             }
             .navLinks.active {
@@ -300,7 +307,7 @@
 
         .carousel-slide {
             position: absolute;
-            top: 0; left: 0; width: 100%; min-height: 100vh;
+            top: 0; left: 0; width: 100%; height: 100vh;
             opacity: 0;
             transition: opacity 1s ease-in-out;
             z-index: 1;
@@ -311,7 +318,7 @@
         /* The Magic: This crops the image to fill the screen */
         .carousel-slide img {
             width: 100%;
-            min-height: 100vh;
+            height: 100vh;
             object-fit: cover;
             object-position: center;
             display: block;
@@ -450,7 +457,12 @@
             }
         }
 
-        .services-grid {
+        
+/* ========================================================
+   SERVICES LISTINGS
+   Grid layouts for displaying offered services
+   ======================================================== */
+.services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
@@ -560,7 +572,12 @@
         }
 
         /* ================= REVIEWS SLIDER ================= */
-        .reviews-section {
+        
+/* ========================================================
+   REVIEWS & TESTIMONIALS
+   Styles for user feedback sliders and grids
+   ======================================================== */
+.reviews-section {
             padding: 40px 0 80px 0;
             background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.5));
             overflow: hidden;
@@ -654,7 +671,12 @@
                 margin-top: -60px;
                 padding-bottom: 60px;
             }
-            .services-grid {
+            
+/* ========================================================
+   SERVICES LISTINGS
+   Grid layouts for displaying offered services
+   ======================================================== */
+.services-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
                 padding: 0 18px;
@@ -683,7 +705,12 @@
             .about-title { font-family: 'Sora', sans-serif; font-size: 1.6rem; margin-bottom: 16px; }
             .about-text { font-size: 1rem; line-height: 1.7; }
 
-            .reviews-section {
+            
+/* ========================================================
+   REVIEWS & TESTIMONIALS
+   Styles for user feedback sliders and grids
+   ======================================================== */
+.reviews-section {
                 padding: 32px 0 60px;
                 background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.5));
             }
@@ -767,7 +794,7 @@
             --accent-gradient: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
         }
 
-        /* ================= NAVBAR ================= */
+        
         .navbar {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -890,7 +917,7 @@
                 padding: 10px 16px 24px 16px; gap: 8px;
                 opacity: 0; visibility: hidden; transform: translateY(-10px);
                 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                max-height: 85vh; overflow-y: auto;
+                max-height: 85vh; overflow-y: auto; overflow-x: hidden;
             }
             .navLinks.active {
                 opacity: 1; visibility: visible; transform: translateY(0);
@@ -1153,7 +1180,12 @@
             gap: 24px;
             text-align: center;
         }
-        .stat-card {
+        
+/* ========================================================
+   STATISTICS CARDS
+   Animated number countup displays
+   ======================================================== */
+.stat-card {
             background: var(--panel);
             border: 1px solid var(--border);
             border-radius: 16px;
@@ -1262,7 +1294,7 @@
             --primary-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
 
-        /* ================= NAVBAR ================= */
+        
         .navbar {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -1436,7 +1468,7 @@
                 padding: 10px 16px 24px 16px; gap: 8px;
                 opacity: 0; visibility: hidden; transform: translateY(-10px);
                 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                max-height: 85vh; overflow-y: auto;
+                max-height: 85vh; overflow-y: auto; overflow-x: hidden;
             }
             .navLinks.active {
                 opacity: 1; visibility: visible; transform: translateY(0);
@@ -1609,7 +1641,12 @@
         /* ================= PAGE CONTENT ================= */
         .page { padding-top: 80px; }
         .container { max-width: 1200px; margin: auto; padding: 24px 18px; }
-        .hero { padding: 60px 0; text-align: center; }
+        
+/* ========================================================
+   HERO SECTIONS
+   Styles for the large banner areas at the top of pages
+   ======================================================== */
+.hero { padding: 60px 0; text-align: center; }
         .hero h1 {
             font-size: clamp(32px, 5vw, 56px); margin: 0 0 10px 0;
             background: linear-gradient(to right, #fff, #aaa);
@@ -1685,7 +1722,7 @@
             --primary-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
 
-        /* ================= NAVBAR ================= */
+        
         .navbar {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -1859,7 +1896,7 @@
                 padding: 10px 16px 24px 16px; gap: 8px;
                 opacity: 0; visibility: hidden; transform: translateY(-10px);
                 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                max-height: 85vh; overflow-y: auto;
+                max-height: 85vh; overflow-y: auto; overflow-x: hidden;
             }
             .navLinks.active {
                 opacity: 1; visibility: visible; transform: translateY(0);
@@ -2030,7 +2067,12 @@
         /* ================= PAGE CONTENT ================= */
         .page { padding-top: 80px; }
         .container { max-width: 1200px; margin: auto; padding: 24px 18px; }
-        .hero { padding: 60px 0; text-align: center; }
+        
+/* ========================================================
+   HERO SECTIONS
+   Styles for the large banner areas at the top of pages
+   ======================================================== */
+.hero { padding: 60px 0; text-align: center; }
         .hero h1 {
             font-size: clamp(32px, 5vw, 56px); margin: 0 0 10px 0;
             background: linear-gradient(to right, #fff, #aaa);
@@ -2106,7 +2148,7 @@
             --primary-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
 
-        /* ================= NAVBAR ================= */
+        
         .navbar {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -2255,7 +2297,7 @@
                 padding: 10px 16px 24px 16px; gap: 8px;
                 opacity: 0; visibility: hidden; transform: translateY(-10px);
                 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                max-height: 85vh; overflow-y: auto;
+                max-height: 85vh; overflow-y: auto; overflow-x: hidden;
             }
             .navLinks.active {
                 opacity: 1; visibility: visible; transform: translateY(0);
@@ -2308,7 +2350,7 @@
             padding: 28px;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             position: relative;
-            overflow: hidden;
+            overflow-y: auto; overflow-x: hidden; overflow-x: hidden; max-height: 350px;
             backdrop-filter: blur(8px);
             display: flex;
             flex-direction: column;
@@ -2399,17 +2441,17 @@
 
         /* --- SLIDE PANEL --- */
         #panel-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; min-height: 100vh;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
             background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
             z-index: 200; opacity: 0; visibility: hidden; transition: 0.3s;
         }
         #panel-overlay.active { opacity: 1; visibility: visible; }
 
         #service-panel {
-            position: fixed; top: 0; right: -600px; width: min(600px, 100%); min-height: 100vh;
+            position: fixed; top: 0; right: -600px; width: min(600px, 100%); height: 100vh;
             background: #0f121a; z-index: 201; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             box-shadow: -10px 0 50px rgba(0,0,0,0.5); padding: 40px;
-            overflow-y: auto; border-left: 1px solid var(--border);
+            overflow-y: auto; overflow-x: hidden; border-left: 1px solid var(--border);
         }
         #service-panel.active { right: 0; }
 
@@ -2471,7 +2513,7 @@
             background: linear-gradient(180deg, rgba(8,10,15,1) 0%, rgba(13,18,30,1) 100%), url('../../images/bg-services.svg') center / cover no-repeat;
             background-blend-mode: overlay;
             color: #ffffff;
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             position: relative;

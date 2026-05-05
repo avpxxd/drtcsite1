@@ -1,7 +1,6 @@
 
 
 
-/* Source: index.html */
 try {
 
 /* * =========================================
@@ -11,7 +10,13 @@ try {
      * The code will automatically create slides for them
      * and crop them to fit (object-fit: cover).
      */
-    const carouselImages = [
+    
+/*******************************************************
+ * CAROUSEL CONFIGURATION
+ * Use this array to define the images displayed in the
+ * homepage hero carousel.
+ *******************************************************/
+const carouselImages = [
         "https://images.pexels.com/photos/14553706/pexels-photo-14553706.jpeg",
         "https://images.pexels.com/photos/15109652/pexels-photo-15109652.jpeg",
         "https://images.pexels.com/photos/159304/network-cable-ethernet-computer-159304.jpeg"
@@ -144,7 +149,12 @@ try {
         }
 
         // 2. Start Animation Loop
-        function nextSlide() {
+        
+    /*******************************************************
+     * ANIMATION LOGIC
+     * Core function moving the carousel to the next frame.
+     *******************************************************/
+    function nextSlide() {
             if (slides.length === 0) return;
 
             // Remove active class from current
@@ -262,7 +272,6 @@ try {
 } catch (e) { console.warn('Ignored error in script block from index.html:', e); }
 
 
-/* Source: about.html */
 try {
 
 /* ================= NAVBAR SCROLL LOGIC ================= */
@@ -404,7 +413,6 @@ try {
 } catch (e) { console.warn('Ignored error in script block from about.html:', e); }
 
 
-/* Source: contact.html */
 try {
 
 /* ================= NAVBAR LOGIC ================= */
@@ -481,11 +489,10 @@ try {
 } catch (e) { console.warn('Ignored error in script block from contact.html:', e); }
 
 
-/* Source: services.html */
 try {
 
 // --- SERVICE DATA CONSOLIDATION ---
-    const serviceData = {
+        const serviceData = {
         'web-development': {
             category: 'Digital Services',
             title: 'Web Development',
@@ -509,168 +516,183 @@ try {
         'infrastructure-hosting': {
             category: 'Digital Services',
             title: 'Infrastructure Hosting',
-            tags: ['Managed Environments', 'Monitoring & Backups', 'Scalable Capacity'],
-            desc: 'Managed hosting solutions for websites and business systems that need dependable uptime and clear oversight.',
+            tags: ['Flexible Resources', 'Windows & Linux', '24/7 Monitoring'],
+            desc: 'Managed hosting solutions designed for flexibility and dependability. We provide responsive customer support and rigorous 24/7 monitoring to ensure your business systems are always available.',
             keyPoints: [
-                'Hosting aligned to your workload and security needs.',
-                'Ongoing monitoring and update planning.',
-                'Professional support for migrations and performance tuning.'
+                'Support for both Windows and Linux hosting environments.',
+                'Flexible resource management tailored to your specific application workloads.',
+                'Proactive 24/7 monitoring to catch and resolve issues early.'
             ],
             highlights: [
-                { label: 'Coverage', val: 'Managed hosting, migrations, and ongoing oversight', desc: 'Focused on resilience and change control.' },
-                { label: 'Priority', val: 'Availability, recovery readiness, and predictable performance', desc: 'Ready for future growth.' }
+                { label: 'Platform Flexibility', val: 'Windows Server, Linux Distributions', desc: 'Deployed correctly the first time to match your app requirements.' },
+                { label: 'Confidence', val: '24/7 Monitoring & Responsive Support', desc: 'Live alerts and rapid response to keep critical infrastructure online.' }
             ],
-            included: ['Provisioning & deployment', 'Backup scheduling', 'Hardening'],
-            extraLabel: 'Ideal For',
-            extraList: ['Businesses needing more oversight', 'Internal tools & client platforms', 'Teams needing clear accountability'],
-            ctaTitle: 'Need dependable hosting?',
-            ctaDesc: 'We can review your current environment and recommend a migration path.'
+            included: ['Environment setup', 'Resource allocation', 'Continuous monitoring'],
+            extraLabel: 'Best Fit For',
+            extraList: ['Businesses looking to migrate to robust servers', 'Companies requiring specific OS environments', 'Scaling web applications'],
+            ctaTitle: 'Ready to upgrade your hosting?',
+            ctaDesc: 'We can review your needs and design a resilient, monitored environment.'
         },
         'server-configuration': {
             category: 'Digital Services',
             title: 'Server Configuration',
-            tags: ['Windows & Linux', 'Security Hardening', 'Documentation'],
-            desc: 'Configuring servers for stable operations, secure access, and dependable performance across on-prem or cloud.',
+            tags: ['Custom Deployments', 'Windows & Linux', 'Security Focused'],
+            desc: 'Expertly configured server environments built natively around your software footprint. Whether you need a Windows domain controller or a Linux web stack, we engineer for stability, security, and responsive performance.',
             keyPoints: [
-                'Role-based configuration for file services and workloads.',
-                'Attention to patching and access control.',
-                'Clear documentation for long-term maintenance.'
+                'Deployment and administration of Windows and Linux servers.',
+                'Proactive resource balancing and scaling preparation.',
+                'Focus on hardening environments against vulnerabilities.'
             ],
             highlights: [
-                { label: 'Scope', val: 'Server builds, roles, policies, and remote admin', desc: 'Practical systems easier to support after deployment.' },
-                { label: 'Outcome', val: 'Stable infrastructure with clear guidance', desc: 'Keeping the environment manageable afterward.' }
+                { label: 'Capabilities', val: 'On-Premise & Cloud Infrastructure', desc: 'We configure settings specifically to your intended use-cases.' },
+                { label: 'Maintenance', val: 'Responsive customer support & 24/7 tracking', desc: 'We stand by what we build with ongoing assistance.' }
             ],
-            included: ['Deployment & service validation', 'Security policy setup', 'Virtualization support'],
+            included: ['Role/Feature installation', 'Security baselines', 'Active threat monitoring setups'],
             extraLabel: 'Best Fit For',
-            extraList: ['First-time server environments', 'Cleaning up aging infrastructure', 'Teams needing dependable configurations'],
-            ctaTitle: 'Need a server configured?',
-            ctaDesc: 'We help plan, deploy, or clean up server environments that are built to last.'
+            extraList: ['Companies upgrading their internal network architecture', 'Software teams requiring specific dependencies', 'Regulated industries needing strict server security'],
+            ctaTitle: 'Need a server engineered for your exact workload?',
+            ctaDesc: 'Let us build a dependable backbone for your data and applications.'
         },
         'pc-building': {
             category: 'Residential Services',
             title: 'PC Planning & Building',
-            tags: ['Workload-Based Design', 'Component Selection', 'Burn-In Testing'],
-            desc: 'Custom PC design based on actual usage�gaming, business productivity, or high-performance workstations.',
+            tags: ['Gaming & Office', 'Childrens Basics', 'Custom Rigs'],
+            desc: 'From high-end gaming rigs and professional office workstations to simple, cost-effective devices designed for children. We custom plan, component-match, and assemble PCs precisely to your requirements.',
             keyPoints: [
-                'Parts selected for budget, workload, and reliability.',
-                'Professional assembly with cable management.',
-                'Validation and burn-in testing before delivery.'
+                'Extensive planning based on actual software/game needs and budget.',
+                'Clean, professional assembly ensuring optimal thermal limits and airflow.',
+                'Turnaround times communicated upfront based on part availability.'
             ],
             highlights: [
-                { label: 'Build Types', val: 'Office systems, gaming PCs, and workstations', desc: 'Planned around the actual applications you use.' },
-                { label: 'Finish', val: 'Clean assembly and ready-to-use delivery', desc: 'Professionally put together from day one.' }
+                { label: 'Versatility', val: 'Office, High-End Gaming, Basic Devices', desc: 'We do not oversell—we build what the user actually needs.' },
+                { label: 'Pricing', val: '100% Custom Quoted', desc: 'Pricing determined honestly by required parts, resources, and custom labor.' }
             ],
-            included: ['Consultation on budget/workload', 'Assembly & Thermal testing', 'OS Setup & Validation'],
+            included: ['Consultation & component selection', 'Cable-managed assembly', 'OS installation & burn-in testing'],
             extraLabel: 'Best Fit For',
-            extraList: ['Users avoiding pre-built compromises', 'Specific tasks like editing or AI', 'Users needing expert guidance'],
-            ctaTitle: 'Need a custom system?',
-            ctaDesc: 'Plan the right PC before spending on parts that don\'t match your needs.'
+            extraList: ['Gamers looking for maximum framerates', 'Professionals needing heavy workstation power', 'Parents buying first-time PCs for kids'],
+            ctaTitle: 'Looking to build your ideal machine?',
+            ctaDesc: 'Tell us what you want to do with it, and we will handle the rest.'
         },
         'hardware-support': {
             category: 'Residential Services',
             title: 'Hardware Support & Repair',
-            tags: ['Diagnostics', 'Component Replacement', 'Preventive Care'],
-            desc: 'Resolving hardware problems for desktops, laptops, and storage with practical repair recommendations.',
+            tags: ['PC & Console Repair', 'Diagnostic Testing', 'Upgrades'],
+            desc: 'Accurate diagnostics and effective hardware repairs for office machines, gaming PCs, kids devices, and even gaming consoles. We assess the severity of the damage to give you transparent turnaround times.',
             keyPoints: [
-                'Structured troubleshooting to find the root cause.',
-                'Repair vs. Replacement guidance based on value.',
-                'Careful handling for data protection.'
+                'Comprehensive support for desktops, laptops, and game consoles.',
+                'Custom labor pricing based solely on the severity of the repair.',
+                'Transparent communication regarding timelines and part ordering.'
             ],
             highlights: [
-                { label: 'Service Scope', val: 'Diagnostics, replacement, and restoration', desc: 'Determining what deliver the best outcome.' },
-                { label: 'Goal', val: 'Extend equipment life where practical', desc: 'The right fix for the situation, not just a sale.' }
+                { label: 'Repair Scope', val: 'Components, Screens, Consoles', desc: 'We take on a massive variety of hardware restoration jobs.' },
+                { label: 'Expectations', val: 'Variable Turnaround', desc: 'Length of the repair depends on the complexity of the fix and part availability.' }
             ],
-            included: ['Diagnostics for memory/cooling/power', 'Component replacement', 'Post-repair validation'],
-            extraLabel: 'Common Issues',
-            extraList: ['Systems that overheat or fail to boot', 'Damaged ports or storage faults', 'Aging equipment assessments'],
-            ctaTitle: 'System failing or slowing down?',
-            ctaDesc: 'Assess the issue and decide if repair or upgrade makes sense.'
+            included: ['Deep diagnostic testing', 'Part sourcing/replacement', 'Post-repair system stress testing'],
+            extraLabel: 'Best Fit For',
+            extraList: ['Broken screens or failing hard drives', 'Overheating or dead game consoles', 'Preventative maintenance & dusting'],
+            ctaTitle: 'Device acting up?',
+            ctaDesc: 'Let us diagnose the hardware issue and provide a fair quote for restoration.'
         },
         'software-support': {
             category: 'Residential Services',
             title: 'Software Support',
-            tags: ['Installation & Setup', 'Troubleshooting', 'User Guidance'],
-            desc: 'Assistance with productivity tools, security apps, and business programs to reduce frustration and conflicts.',
+            tags: ['OS Reinstalls', 'Troubleshooting', 'App Configurations'],
+            desc: 'Professional software assistance spanning everything from operating system errors and virus removal to specialized productivity application configuration. We solve the issues slowing down your daily workflow.',
             keyPoints: [
-                'Support for setup, config, updates, and licensing.',
-                'Troubleshooting for crashes and conflicts.',
-                'Practical guidance for effective software use.'
+                'Malware and virus identification and clean removal.',
+                'Corrupted operating system repair and fresh installs.',
+                'Pricing structured cleanly around the labor required for the specific fix.'
             ],
             highlights: [
-                { label: 'Support Areas', val: 'Productivity, security, email, and business apps', desc: 'Focusing on apps that need to work properly for real users.' },
-                { label: 'Outcome', val: 'Stable systems and confident users', desc: 'Reducing recurring issues through better config.' }
+                { label: 'Coverage', val: 'Windows, Productivity Suites, Gaming Clients', desc: 'We resolve conflicts across the software spectrum.' },
+                { label: 'Pricing', val: 'Custom quoted labor', desc: 'You never pay a blanket fee for a simple fix.' }
             ],
-            included: ['Profile configuration', 'Resolution of conflicts', 'Maintenance guidance'],
+            included: ['Error logging review', 'Software re-initializations', 'Driver updates'],
             extraLabel: 'Best Fit For',
-            extraList: ['Correct config without trial & error', 'Onboarding new applications', 'Repeated issues that basic steps didn\'t fix'],
-            ctaTitle: 'Software not behaving?',
-            ctaDesc: 'We can install, configure, or troubleshoot the apps your work depends on.'
+            extraList: ['Blue screen of death (BSOD) loops', 'Slow, bogged-down operating systems', 'Data recovery or OS migrations'],
+            ctaTitle: 'Need help untangling a software mess?',
+            ctaDesc: 'Reach out to our team, and we will get your systems running smoothly again.'
         },
         'enterprise-networking': {
             category: 'Networking',
             title: 'Enterprise Networking',
-            tags: ['Network Design', 'Secure Access', 'Ongoing Reliability'],
-            desc: 'Business networking environments supporting staff, devices, and cloud services with performance and stability.',
+            tags: ['Ubiquiti & Cisco', 'Custom Topologies', 'Robust Wi-Fi'],
+            desc: 'Secure, cleanly segmented network deployments using professional gear. We primarily work with UniFi and Cisco hardware to guarantee consistent, business-grade connections across your entire footprint.',
             keyPoints: [
-                'Business-focused planning for offices and multi-user growth.',
-                'Traffic flow and firewall alignment.',
-                'Emphasis on long-term maintainability.'
+                'Primary deployments handled confidently using UniFi and Cisco systems.',
+                'We also actively work with and configure user-supplied networking machinery.',
+                'Complete layout mapping for consistent Wi-Fi spread and wired stability.'
             ],
             highlights: [
-                { label: 'Coverage', val: 'Switching, wireless, and firewall planning', desc: 'Supporting how users and services interact.' },
-                { label: 'Value', val: 'Reliable connectivity for critical systems', desc: 'Reducing daily friction and enabling growth.' }
+                { label: 'Brand Expertise', val: 'UniFi & Cisco', desc: 'We deploy the standard bearers of modern enterprise infrastructure.' },
+                { label: 'Flexibility', val: 'User-Supplied Integration', desc: 'Bought your own gear? We can configure and deploy it properly for you.' }
             ],
-            included: ['Switching & Routing design', 'Segmentation', 'Support for cable runs'],
-            extraLabel: 'Ideal Environments',
-            extraList: ['Offices with shared resources', 'Growth-oriented businesses', 'Modernizing undocumented networks'],
-            ctaTitle: 'Need a stronger network?',
-            ctaDesc: 'Assessment and delivery of a network that performs more reliably.'
+            included: ['Network segmentation/VLANs', 'Physical AP mounting', 'Security and firewall rule generation'],
+            extraLabel: 'Best Fit For',
+            extraList: ['Offices with dead zones', 'Businesses requiring secure guest networks', 'Locations transitioning to fiber'],
+            ctaTitle: 'Ready for enterprise-grade connectivity?',
+            ctaDesc: 'We will design a network topology that removes bottlenecks and drops.'
         },
         'home-networking': {
             category: 'Networking',
             title: 'Home Networking',
-            tags: ['Wi-Fi Coverage', 'Smart Home Support', 'Performance Tuning'],
-            desc: 'Improving home networking for streaming, work-from-home, gaming, and smart devices.',
+            tags: ['Mesh Systems', 'UniFi Deployments', 'Smart Home Integration'],
+            desc: 'Powerful residential Wi-Fi and hardwired networking. From large property UniFi deployments to setting up customer-supplied routers, we work to fit your budget and deliver dead-zone-free connections.',
             keyPoints: [
-                'Solutions for dead zones and weak Wi-Fi.',
-                'Mesh system and access point placement.',
-                'Wired backhaul options for stability.'
+                'Expertise installing robust residential UniFi ecosystems.',
+                'Happy to install and configure hardware that you have already purchased.',
+                'Pricing tailored entirely to the scale of layout and labor required.'
             ],
             highlights: [
-                { label: 'Improvements', val: 'Coverage and device stability', desc: 'Consistency where you actually use it.' },
-                { label: 'Support', val: 'Mesh, security, and smart home', desc: 'Entertainment without daily frustration.' }
+                { label: 'Outcome', val: 'Consistent Wi-Fi Coverage', desc: 'Say goodbye to dropped connections on the opposite side of the house.' },
+                { label: 'Approach', val: 'Budget-conscious architecture', desc: 'We do our best to map networks that fit realistically within your wallet.' }
             ],
-            included: ['Device load assessment', 'Mesh configuration', 'Security setup'],
+            included: ['Router & switch setup', 'Wireless Access Point testing', 'Smart home bridging'],
             extraLabel: 'Best Fit For',
-            extraList: ['Multi-floor homes with weak signal', 'Balancing streaming and work traffic', 'Guidance instead of guessing at hardware'],
-            ctaTitle: 'Tired of weak Wi-Fi?',
-            ctaDesc: 'Help improve performance throughout the home with practical changes.'
+            extraList: ['Large homes suffering from weak ISP routers', 'Backyard/Garage Wi-Fi extensions', 'Hardwiring home offices or entertainment centers'],
+            ctaTitle: 'Tired of buffering?',
+            ctaDesc: 'Let us build a home network that finally handles your streaming and gaming needs.'
         },
         'voip-setup': {
             category: 'Networking',
             title: 'VoIP Setup & Installation',
-            tags: ['Voice Systems', 'Call Routing', 'Network Readiness'],
-            desc: 'Modernizing business phone service with VoIP to improve call handling and support hybrid work.',
+            tags: ['3CX Yealink', 'Polycom & Cisco', 'Budget-Conscious'],
+            desc: 'Modernize your communications. We deploy and configure major VoIP brands like 3CX Yealink, Polycom, and Cisco, ensuring consistent call quality over robust wireless or hardwired networks.',
             keyPoints: [
-                'Extensions, handsets, and call flow design.',
-                'Attention to voice quality and latency.',
-                'Low-disruption transition planning.'
+                'Specialized experience with 3CX Yealink, Polycom, and Cisco systems.',
+                'Configuring handsets to maintain consistent, clear connections—even via Wi-Fi.',
+                'Designing call flows and setups that actively respect and fit your budget.'
             ],
             highlights: [
-                { label: 'Setup', val: 'Handsets, voicemail, and auto attendants', desc: 'Shaping a professional ??????? phone experience.' },
-                { label: 'Outcome', val: 'Clearer communication with less friction', desc: 'Making day-to-day talk easier for staff and clients.' }
+                { label: 'Hardware Integrations', val: '3CX Yealink, Polycom, Cisco', desc: 'Deploying the best devices in the VoIP industry.' },
+                { label: 'Connectivity', val: 'Consistent Wireless VoIP', desc: 'We structure the network so your Wi-Fi handsets ring clearly every time.' }
             ],
-            included: ['Call flow structure', 'Voicemail setup', 'Readiness audit'],
+            included: ['Handset provisioning', 'Call routing/flow design', 'Network prioritization for voice traffic'],
             extraLabel: 'Best Fit For',
-            extraList: ['Replacing traditional analog lines', 'Teams needing remote work flexibility', 'Polished client communication'],
-            ctaTitle: 'Upgrading your phone system?',
-            ctaDesc: 'Plan a VoIP setup that is clear, professional, and easier to manage.'
+            extraList: ['Offices replacing legacy landlines', 'Call centers requiring complex routing', 'Remote teams utilizing softphones'],
+            ctaTitle: 'Looking to modernize your phones?',
+            ctaDesc: 'Get in touch for a custom VoIP mapping strategy and hardware quote.'
         }
     };
 
-    window.openPanel = function(id) {
+/*******************************************************
+ * SERVICE PANELS (MODALS)
+ * Logic for opening and closing the slide-out service
+ * description panels on the Services page.
+ *******************************************************/
+window.openPanel = function(id) {
         const data = serviceData[id];
         if (!data) return;
+                let buttonsHtml = '';
+        if (id === 'voip-setup') {
+            buttonsHtml = `<a href="../../pages/company/request-a-quote.html" class="primary-btn">Request a Quote</a>
+                           <a href="../../pages/company/contact.html" class="primary-btn" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">Contact Us</a>`;
+        } else if (data.category.includes('Business') || data.category.includes('Digital') || data.category.includes('Enterprise') || id === 'enterprise-networking') {
+            buttonsHtml = `<a href="../../pages/company/request-a-quote.html" class="primary-btn">Request a Quote</a>`;
+        } else {
+            buttonsHtml = `<a href="../../pages/company/contact.html" class="primary-btn">Contact Us</a>`;
+        }
+
         history.replaceState(null, '', '?open=' + id);
         const content = `
             <div class="panel-category">${data.category}</div>
@@ -703,10 +725,12 @@ try {
                 ${data.extraList.map(e => `<li>${e}</li>`).join('')}
             </ul>
 
-            <div class="panel-cta-box">
+                                    <div class="panel-cta-box">
                 <h4>${data.ctaTitle}</h4>
                 <p>${data.ctaDesc}</p>
-                <a href="../../pages/company/contact.html" class="primary-btn">Contact Us</a>
+                <div style="display: flex; justify-content: center; gap: 12px; margin-top: 20px;">
+                    ${buttonsHtml}
+                </div>
             </div>
         `;
         document.getElementById('panel-content').innerHTML = content;
